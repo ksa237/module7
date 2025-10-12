@@ -1,0 +1,15 @@
+# ksa237 #
+**/hw*/**/.gigaide/
+**/hw*/**/.idea/
+hw*.iml
+**/hw*/**/.gitignore
+
+**/task*/**/.gigaide/
+**/task*/**/.idea/
+task*.iml
+**/task*/**/.gitignore
+
+**/ex*/**/.gigaide/
+**/ex*/**/.idea
+ex*.iml
+**/ex*/**/.gitignore
