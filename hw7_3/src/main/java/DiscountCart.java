@@ -7,6 +7,9 @@ public class DiscountCart implements Cart {
 
     private ShoppingCart shoppingCart;
     private List<String> listItems = new ArrayList<>();
+
+    //Магические числа. Используем финальную статическую переменную с понятным названием, вместо одиночного числа "2"
+    //в самом коде
     private final int DISCOUNT_CONDITION = 2;
 
     public DiscountCart(ShoppingCart shoppingCart) {
@@ -33,6 +36,8 @@ public class DiscountCart implements Cart {
         // в данном классе нужно вывожить условия акции
 
         System.out.println("В случае оплаты вам будут дотсупны скидки на такие товары:");
+        //Магические числа. Используем финальную статическую переменную с понятным названием, вместо одиночного числа "2"
+        //в самом коде
         System.out.println("Условия скидки: купи одинаковых товаров больше чем " + DISCOUNT_CONDITION);
         listItems.forEach(System.out::println);
     }

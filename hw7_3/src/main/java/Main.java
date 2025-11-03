@@ -35,12 +35,14 @@ public class Main {
         Goods goods = new Goods(PATH_TO_LOAD_GOODS);
         ShoppingCart shoppingCart = new ShoppingCart();
 
-        System.out.println(WELCOME);
+        //System.out.println(WELCOME);
+        printStaticTitle(WELCOME,false);
 
         while (isRunning) {
 
             goods.printGoods();
-            System.out.println(MENU);
+            //System.out.println(MENU);
+            printStaticTitle(MENU, false);
 
             String input = scanner.nextLine();
 
@@ -69,14 +71,17 @@ public class Main {
     private static boolean isFinishProcessInput(String input, Goods goods, ShoppingCart shoppingCart) {
 
         if (input.equalsIgnoreCase("X") || input.equalsIgnoreCase("Х")) {
-            System.out.println(BYE_LONER);
+            //System.out.println(BYE_LONER);
+            printStaticTitle(BYE_LONER,false);
             return true;
         } else if (input.equals("!")) {
             if (shoppingCart.size() > 0) {
-                System.out.println(BYE_WITH_BUY);
+                //System.out.println(BYE_WITH_BUY);
+                printStaticTitle(BYE_WITH_BUY, false);
                 shoppingCart.printCart();
             } else {
-                System.out.println(BYE_LONER);
+                //System.out.println(BYE_LONER);
+                printStaticTitle(BYE_LONER,false);
             }
             return true;
         } else if (isInteger(input)) {
@@ -106,5 +111,13 @@ public class Main {
         }
     }
 
+
+    //Принцип DRY. есть повторяющийся код в разных участках модуля, сделаем общий метод.
+    private static void printStaticTitle(String title, boolean paragraph){
+        System.out.println(title);
+        if (paragraph){
+            System.out.println();
+        }
+    }
 
 }
